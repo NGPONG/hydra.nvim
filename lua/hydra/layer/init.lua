@@ -424,6 +424,7 @@ function Layer:_save_keymaps(bufnr)
                script = map.script == 1,
                silent = map.silent == 1,
                nowait = map.nowait == 1,
+               desc = map.desc
             }
          end
       end
@@ -447,7 +448,8 @@ function Layer:_restore_keymaps()
                      noremap = map.noremap,
                      script = map.script,
                      silent = map.silent,
-                     nowait = map.nowait
+                     nowait = map.nowait,
+                     desc = map.desc,
                   })
                else
                   pcall(vim.keymap.del, mode, lhs, { buffer = bufnr })
